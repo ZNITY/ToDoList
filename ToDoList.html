@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #B8BFBF;
+      color: #B8BFBF;
+      font-family: "Poppins";
+      font-weight: 600;
+    }
+      #input:checked ~ #change{
+	       text-decoration:line-through #e04346;
+      }
+      #go span{
+        display: flex;
+        align-items: center;
+      }
+      input{
+        margin: 10px 0;
+        border: none;
+        color: #283740;
+        width: 60%;
+        background: none;
+        background-color: #908b8e;
+        border-radius: 10px;
+        padding: 12px 20px;
+        font-family: "Poppins";
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        outline: none;
+      }
+      ::placeholder {
+        font-family: "Poppins";
+        letter-spacing: 2px;
+        color: white;
+        font-weight: lighter;
+        opacity: 0.6;
+      }
+      .container{
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        min-width: 500px;
+        min-height: 60%;
+        background-color: #6e656a;
+      }
+      button{
+        margin: 10px;
+        cursor: pointer;
+        background-color: #283740;
+        padding: 12px 20px;
+        border-radius: 10px;
+        color: #B8BFBF;
+        border: none;
+        font-family: "Poppins";
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        outline: none;
+      }
+      #input{
+        display: none;
+      }
+      label{
+        background-color: #B8BFBF;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 90%;
+        border-radius: 10px;
+      }
+      label p{
+        color: #283740;
+      }
+      span{
+        display: flex;
+        justify-content: center;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+
+
+    <div class="">
+      <input type="text" id="entertodo" placeholder="Enter task">
+      <button type="button" name="button" onclick="addTask()">Add</button><br>
+    </div>
+
+
+    <div id="go"></div>
+
+    </div>
+
+
+    <script type="text/javascript">
+
+        function addTask(){
+    let task = document.getElementById("entertodo").value;
+    let div = document.createElement("div");
+    let span = document.createElement("span");
+    let input = document.createElement("input");
+    input.type = "checkbox";
+    input.id = "input";
+    let label = document.createElement("label");
+    let p = document.createElement("p");
+    p.id = "change";
+    let txt = document.createTextNode(task);
+
+    p.appendChild(txt);
+    label.appendChild(input);
+    label.appendChild(p);
+    span.appendChild(label);
+
+
+
+    document.getElementById("go").appendChild(span);
+    document.getElementById("entertodo").value='';
+
+
+}
+
+    </script>
+
+
+  </body>
+</html>
